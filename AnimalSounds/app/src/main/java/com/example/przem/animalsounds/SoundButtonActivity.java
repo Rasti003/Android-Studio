@@ -40,11 +40,51 @@ public class SoundButtonActivity extends AppCompatActivity {
             }
         });
 
-    }
+        final MediaPlayer CowPlayer = MediaPlayer.create(this, R.raw.cow);
+
+        Button playCow = (Button) this.findViewById(R.id.button_cow);
+
+        playCow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CowPlayer.start();
+
+
+            }
+        });
+
+        final MediaPlayer MonkeyPlayer = MediaPlayer.create(this, R.raw.monkey);
+
+        Button playMonkey = (Button) this.findViewById(R.id.button_monkey);
+
+        playMonkey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MonkeyPlayer.start();
+
+
+            }
+        });
+
+        final MediaPlayer SheepPlayer = MediaPlayer.create(this, R.raw.sheep);
+
+        Button playSheep = (Button) this.findViewById(R.id.button_sheep);
+
+        playSheep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SheepPlayer.start();
+
+
+            }
+        });
 
 
 
 
-    }
+
+        }
+
+}
 
 

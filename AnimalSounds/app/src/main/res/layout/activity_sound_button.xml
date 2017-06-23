@@ -13,38 +13,71 @@ android:layout_height="fill_parent"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
         android:text="@string/information_text"
         android:textStyle="bold"
         android:textSize="35dp"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
 
-
-
-    <Button
-        android:id="@+id/button_cat"
-        android:layout_width="148dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/button_dog"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="40dp"
-        android:background="@android:color/holo_blue_dark"
-        android:text="@string/Cat_button"
-
-        />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="69dp"
+    android:id="@+id/linearLayout">
 
     <Button
         android:id="@+id/button_dog"
-        android:layout_width="148dp"
-        android:layout_height="48dp"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="4dp"
-        android:layout_toStartOf="@+id/button_cat"
-        android:background="@android:color/holo_blue_dark"
-        android:text="@string/Dog_button"/>
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/dog"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <Button
+        android:id="@+id/button_cow"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/cow"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <Button
+        android:id="@+id/button_monkey"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/monkey"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <Button
+        android:id="@+id/button_cat"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/cat"
+        android:layout_marginTop="10dp"
+
+        />
+
+</LinearLayout>
+
+    <Button
+        android:id="@+id/button_sheep"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+
+        android:layout_marginStart="12dp"
+        android:background="@drawable/sheep"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"/>
 </RelativeLayout>
