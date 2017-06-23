@@ -2,4 +2,5 @@
     <string name="app_name">AnimalSounds</string>
     <string name="Cat_button">Play Cat sounds</string>
     <string name="information_text">push the button!</string>
+    <string name="Dog_button">PLAY DOG SOUNDS</string>
 </resources>

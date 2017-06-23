@@ -25,5 +25,26 @@ public class SoundButtonActivity extends AppCompatActivity {
 
             }
         });
+
+
+        final MediaPlayer DogPlayer = MediaPlayer.create(this, R.raw.dog);
+
+        Button playDog = (Button) this.findViewById(R.id.button_dog);
+
+        playDog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DogPlayer.start();
+
+
+            }
+        });
+
     }
-}
+
+
+
+
+    }
+
+
