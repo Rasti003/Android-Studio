@@ -80,4 +80,16 @@ android:layout_height="fill_parent"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/button_ActiveGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="23dp"
+        android:text="GAME!"
+        android:onClick="ActiveGame"
+        />
 </RelativeLayout>
