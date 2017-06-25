@@ -53,7 +53,7 @@ public class GameActivity extends AppCompatActivity {
         Score.setText(message);                                 //aktualizacja TextView
     }
 
-    public int RandomValue(int Num_of_anim) {                   //  deklaracia medtody generowania jednego zwiezecia (losowej liczby) z przedziału liczby zwiezat
+    public int RandomValue(int Num_of_anim) {                   //  deklaracia medtody generowania jednego zwiezecia (losowej liczby) z przedziału liczby zwieząt
         Random generator = new Random();
         int r_value = generator.nextInt(Num_of_anim);
         return r_value;
