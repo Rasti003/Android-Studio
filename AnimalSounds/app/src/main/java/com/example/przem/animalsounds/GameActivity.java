@@ -1,23 +1,33 @@
 package com.example.przem.animalsounds;
 
 import android.media.MediaPlayer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import java.util.Random;
-
+import android.content.DialogInterface;
+import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
     //  int myScore =0;       // poczatkowal liczba pkt
     int Num_of_anim = 5; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
+    int random_animal = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        DisplayScore(RandomValue(Num_of_anim));       // wywołanie metody wyswietlania zdobytych punktów
-        PlaySounds(RandomValue(Num_of_anim));
+        popup();
+        random_animal = RandomValue(Num_of_anim);
+        DisplayScore(random_animal);       // wywołanie metody wyswietlania zdobytych punktów
+        PlaySounds(random_animal);
+
+
+        setContentView(R.layout.activity_game);
 
 
     }
@@ -88,6 +98,31 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+    public void popup() {
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setTitle(R.string.popup_game_title);
+        adb.setMessage(R.string.popup_game_message);
+
+        //final TextView tv=(TextView)findViewById(R.id.textView1);     // reakcia na przycisniecie przycyski w obieckie TextViec o Id textViev1
+
+        adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //### akcja  po przyciśnieciu przycisku 1 / przykład zmiana TextViev
+                //tv.setText("You have clicked ok");
+            }
+        });
+             // ########Przycisk Cancel #########
+            // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+            // {
+            //  public void onClick(DialogInterface dialog, int id)
+            // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
+            //tv.setText("You have clicked Cancel");
+            //   dialog.cancel();
+            //}});
+
+            adb.setIcon(R.drawable.owl);    // ikona popup
+            adb.show();
+    }
 }
 
 

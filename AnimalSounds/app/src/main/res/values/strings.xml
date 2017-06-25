@@ -5,4 +5,6 @@
     <string name="Dog_button">PLAY DOG SOUNDS</string>
     <string name="SoundGame_text">Game in preparation</string>
     <string name="score_game">Score</string>
+    <string name="popup_game_title">Game instructions</string>
+    <string name="popup_game_message">blabla bla bla bla bla bla blabla</string>
 </resources>
