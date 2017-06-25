@@ -4,4 +4,5 @@
     <string name="information_text">push the Animal</string>
     <string name="Dog_button">PLAY DOG SOUNDS</string>
     <string name="SoundGame_text">Game in preparation</string>
+    <string name="score_game">Score</string>
 </resources>

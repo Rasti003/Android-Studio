@@ -32,18 +32,13 @@ public class SoundButtonActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(), "Game is started " , Toast.LENGTH_SHORT).show(); //Wyswietlanie "POP-UP" z napisem  dlaszy ci
+                Toast.makeText(getApplicationContext(), "Game is started " , Toast.LENGTH_SHORT).show(); //Wyswietlanie "POP-UP" z napisem
 
                     Intent intent = new Intent(getApplicationContext(), GameActivity.class); //PRZENOSZENIE NA INNE ACTIVITY: twozenie INTENS getApp..- aktualny kontekst aplikacje przycisk powrót tu przeniesie , Activity docelowe.class
                 startActivity(intent);                       //Wywołanie przeniesienia
 
             }
         });
-
-
-
-
-
 
 
         final MediaPlayer CatPlayer = MediaPlayer.create(this, R.raw.cat);
@@ -59,8 +54,6 @@ public class SoundButtonActivity extends AppCompatActivity {
 
             }
         });
-
-
 
 
         final MediaPlayer DogPlayer = MediaPlayer.create(this, R.raw.dog);
