@@ -60,7 +60,7 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    public void DogPlayer() {                                                       // deklaracie metod dla  konkretnych dziwkeów kazdy w osobnej metodzie
+    public void DogPlayer() {                                                       // deklaracja metod dla  konkretnych dziwkeów kazdy w osobnej metodzie
         MediaPlayer Player = MediaPlayer.create(this, R.raw.dog);
         Player.start();
     }
