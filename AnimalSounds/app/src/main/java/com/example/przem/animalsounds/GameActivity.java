@@ -4,15 +4,20 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import java.util.Random;
 import android.content.DialogInterface;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
-    //  int myScore =0;       // poczatkowal liczba pkt
+    int myScore = 0;       // poczatkowal liczba pkt
     int Num_of_anim = 5; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
+
+    Button b1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +25,11 @@ public class GameActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        b1 = (Button) findViewById(R.id.button_dog);
 
-        popup();
+        popup();   // PO NACISNIECIU OK NSTEPUJE ROZPOCZECIE GRY POPRZEZ ODTWOZENIE DZWIEKU
         random_animal = RandomValue(Num_of_anim);
-        DisplayScore(random_animal);       // wywołanie metody wyswietlania zdobytych punktów
-        PlaySounds(random_animal);
-
-
-        setContentView(R.layout.activity_game);
-
+        DisplayScore(myScore);       // wywołanie metody wyswietlania zdobytych punktów
 
     }
 
@@ -107,22 +108,91 @@ public class GameActivity extends AppCompatActivity {
 
         adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                PlaySounds(random_animal);
+
                 //### akcja  po przyciśnieciu przycisku 1 / przykład zmiana TextViev
                 //tv.setText("You have clicked ok");
             }
         });
-             // ########Przycisk Cancel #########
-            // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-            // {
-            //  public void onClick(DialogInterface dialog, int id)
-            // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
-            //tv.setText("You have clicked Cancel");
-            //   dialog.cancel();
-            //}});
+        // ########Przycisk Cancel #########
+        // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+        // {
+        //  public void onClick(DialogInterface dialog, int id)
+        // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
+        //tv.setText("You have clicked Cancel");
+        //   dialog.cancel();
+        //}});
 
-            adb.setIcon(R.drawable.owl);    // ikona popup
-            adb.show();
+        adb.setIcon(R.drawable.owl);    // ikona popup
+        adb.show();
     }
+
+
+    public void AnswerDog(View v) {
+        if (random_animal == 0) {
+            AddScore();
+        } else {
+            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void AnswerCow(View v) {
+        if (random_animal == 1) {
+            AddScore();
+        } else {
+            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void AnswerMonkay(View v) {
+        if (random_animal == 2) {
+            AddScore();
+        } else {
+            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void AnswerCat(View v) {
+        if (random_animal == 3) {
+            AddScore();
+        } else {
+            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void AnswerSheep(View v) {
+        if (random_animal == 4) {
+            AddScore();
+        } else {
+            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public void AddScore() {
+        switch (random_animal) {
+
+            case 0:
+                Toast.makeText(getApplicationContext(), "YES!! This is a dog", Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                Toast.makeText(getApplicationContext(), "YES!! This is a cow", Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+                Toast.makeText(getApplicationContext(), "YES!! This is a monkey", Toast.LENGTH_SHORT).show();
+                break;
+            case 3:
+                Toast.makeText(getApplicationContext(), "YES!! This is a cat", Toast.LENGTH_SHORT).show();
+                break;
+            case 4:
+                Toast.makeText(getApplicationContext(), "YES!! This is a sheep", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+        myScore = myScore + 1;
+        DisplayScore(myScore);
+        random_animal = RandomValue(Num_of_anim);
+        PlaySounds(random_animal); }
 }
 
 
