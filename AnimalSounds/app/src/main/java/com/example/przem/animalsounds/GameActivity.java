@@ -15,6 +15,7 @@ public class GameActivity extends AppCompatActivity {
     int myScore = 0;       // poczatkowal liczba pkt
     int Num_of_anim = 5; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
+    int number_of_lives =5;
 
     Button b1;
 
@@ -27,9 +28,12 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         b1 = (Button) findViewById(R.id.button_dog);
 
+
+
         popup();   // PO NACISNIECIU OK NSTEPUJE ROZPOCZECIE GRY POPRZEZ ODTWOZENIE DZWIEKU
         random_animal = RandomValue(Num_of_anim);
-        DisplayScore(myScore);       // wywołanie metody wyswietlania zdobytych punktów
+        DisplayScore(myScore,number_of_lives);       // wywołanie metody wyswietlania zdobytych punktów
+
 
     }
 
@@ -58,11 +62,18 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
-    public void DisplayScore(int myScore) {                             // deklaracje metody wyswietlania zdobytych punktów
+    public void DisplayScore(int myScore, int number_of_lives) {                             // deklaracje metody wyswietlania zdobytych punktów
         String message = "Score " + myScore;                    //  twozenie ciagu znakowego
         TextView Score = (TextView) findViewById(R.id.score);  // twozenie Score i odnajdywanie odpowiedniego pola tekstowego
         Score.setText(message);                                 //aktualizacja TextView
+
+        String live_message =  "Live:  " + number_of_lives;
+        TextView live = (TextView) findViewById(R.id.live);  //  funkcja wyswietlajace pozostałe zyca
+        live.setText(live_message);
     }
+
+
+
 
     public int RandomValue(int Num_of_anim) {                   //  deklaracia medtody generowania jednego zwiezecia (losowej liczby) z przedziału liczby zwieząt
         Random generator = new Random();
@@ -70,6 +81,9 @@ public class GameActivity extends AppCompatActivity {
         return r_value;
 
     }
+
+
+
 
     public void DogPlayer() {                                                       // deklaracja metod dla  konkretnych dziwkeów kazdy w osobnej metodzie
         MediaPlayer Player = MediaPlayer.create(this, R.raw.dog);
@@ -132,7 +146,7 @@ public class GameActivity extends AppCompatActivity {
         if (random_animal == 0) {
             AddScore();
         } else {
-            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+           WrongAnwser();
         }
     }
 
@@ -140,7 +154,7 @@ public class GameActivity extends AppCompatActivity {
         if (random_animal == 1) {
             AddScore();
         } else {
-            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+            WrongAnwser();
         }
     }
 
@@ -148,7 +162,7 @@ public class GameActivity extends AppCompatActivity {
         if (random_animal == 2) {
             AddScore();
         } else {
-            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+            WrongAnwser();
         }
     }
 
@@ -156,7 +170,7 @@ public class GameActivity extends AppCompatActivity {
         if (random_animal == 3) {
             AddScore();
         } else {
-            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+            WrongAnwser();
         }
     }
 
@@ -164,7 +178,7 @@ public class GameActivity extends AppCompatActivity {
         if (random_animal == 4) {
             AddScore();
         } else {
-            Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+            WrongAnwser();
         }
     }
 
@@ -190,9 +204,18 @@ public class GameActivity extends AppCompatActivity {
 
         }
         myScore = myScore + 1;
-        DisplayScore(myScore);
+        DisplayScore(myScore, number_of_lives);
         random_animal = RandomValue(Num_of_anim);
-        PlaySounds(random_animal); }
+        PlaySounds(random_animal);
+    }
+    public void WrongAnwser(){
+        Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
+        number_of_lives = number_of_lives -1 ;
+        DisplayScore(myScore, number_of_lives);
+
+    }
+
+
 }
 
 

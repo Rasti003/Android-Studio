@@ -4,7 +4,8 @@
     <string name="information_text">push the Animal</string>
     <string name="Dog_button">PLAY DOG SOUNDS</string>
     <string name="SoundGame_text">Game in preparation</string>
-    <string name="score_game">Score</string>
+    <string name="score_game">Score: </string>
+    <string name="live">Live: </string>
     <string name="popup_game_title">Game instructions</string>
     <string name="popup_game_message">Press the animal whose sound you hear</string>
 </resources>

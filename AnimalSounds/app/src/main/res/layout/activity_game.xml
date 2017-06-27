@@ -81,7 +81,17 @@
             android:visibility="visible" />
     </LinearLayout>
 
-        <Button
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_game"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_below="@+id/live"
+        android:layout_alignStart="@+id/live" />
+
+    <Button
             android:id="@+id/button_sheep"
             android:layout_width="75dp"
             android:layout_height="75dp"
@@ -94,15 +104,15 @@
             />
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/live"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/button_sheep"
-        android:layout_marginEnd="17dp"
-        android:layout_marginTop="22dp"
-        android:text="@string/score_game" />
-
+        android:layout_marginTop="11dp"
+        android:text="@string/live"
+        android:layout_below="@+id/button_sheep"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_alignStart="@+id/linearLayout" />
 
 
 </RelativeLayout>
