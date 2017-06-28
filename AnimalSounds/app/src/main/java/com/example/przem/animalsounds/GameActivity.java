@@ -26,51 +26,20 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        super.onCreate(savedInstanceState);                                      // przygotowywanie przycisku pozycji w pliku XML z dopiskiem OnClick id skierowanie na .dog nie ma znaczenia wybierany jest  kazdy,  id ulega  zmianie podczas wykonywania animacji
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         b1 = (Button) findViewById(R.id.button_cat);
 
 
 
         popup();   // PO NACISNIECIU OK NSTEPUJE ROZPOCZECIE GRY POPRZEZ ODTWOZENIE DZWIEKU
-        random_animal = RandomValue(Num_of_anim);       //przypisywanie wyllosowanego dzwieku pod zmienna
+        random_animal = RandomValue(Num_of_anim);
         DisplayScore(myScore,number_of_lives);       // wywołanie metody wyswietlania zdobytych punktów
 
     }
 
 
     //////////////////////////////////////////////////////////////////////////////////////////
-
-    public void popup() {
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        adb.setTitle(R.string.popup_game_title);
-        adb.setMessage(R.string.popup_game_message);
-
-        //final TextView tv=(TextView)findViewById(R.id.textView1);     // reakcia na przycisniecie przycyski w obieckie TextViec o Id textViev1
-
-        adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                PlaySounds(random_animal);
-
-                //### akcja  po przyciśnieciu przycisku 1 / przykład zmiana TextViev
-                //tv.setText("You have clicked ok");
-            }
-        });
-        // ########Przycisk Cancel #########
-        // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-        // {
-        //  public void onClick(DialogInterface dialog, int id)
-        // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
-        //tv.setText("You have clicked Cancel");
-        //   dialog.cancel();
-        //}});
-
-        adb.setIcon(R.drawable.owl);    // ikona popup
-        adb.show();
-    }
-
-
-
     public void PlaySounds(int RandomNumer) {                         // instrukacia switch dokonujaca wyboru aktualnie odtwazanego dzwieku w zaleznosci od wylosowanej liczby
         switch (RandomNumer) {
 
@@ -146,9 +115,36 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+    public void popup() {
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setTitle(R.string.popup_game_title);
+        adb.setMessage(R.string.popup_game_message);
+
+        //final TextView tv=(TextView)findViewById(R.id.textView1);     // reakcia na przycisniecie przycyski w obieckie TextViec o Id textViev1
+
+        adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                PlaySounds(random_animal);
+
+                //### akcja  po przyciśnieciu przycisku 1 / przykład zmiana TextViev
+                //tv.setText("You have clicked ok");
+            }
+        });
+        // ########Przycisk Cancel #########
+        // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+        // {
+        //  public void onClick(DialogInterface dialog, int id)
+        // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
+        //tv.setText("You have clicked Cancel");
+        //   dialog.cancel();
+        //}});
+
+        adb.setIcon(R.drawable.owl);    // ikona popup
+        adb.show();
+    }
 
 
-    public void AnswerDog(View v) {                                                     //reakcje na kokretne odpoiwedzi  sprawdzanie ich poprawnosci
+    public void AnswerDog(View v) {
         ButtonAnimation(0);
 
             if (random_animal == 0) {
@@ -222,22 +218,14 @@ public class GameActivity extends AppCompatActivity {
         random_animal = RandomValue(Num_of_anim);
         PlaySounds(random_animal);
     }
-    public void WrongAnwser() {
+    public void WrongAnwser(){
         Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
-        number_of_lives = number_of_lives - 1;
+        number_of_lives = number_of_lives -1 ;
         DisplayScore(myScore, number_of_lives);
-
-        if (number_of_lives <= 0) {
-            GameOverPopup();
-            myScore =0;                          //zerowanie pkt w wypadku przegranej
-            number_of_lives=5;                  // przywracanie domyslnej liczby zyc
-       
-
-        }
 
     }
 
-    public void ButtonAnimation(int random_animal){                             // animacje po wcisnieciu porzycisku id jest zmieniane na konkredtne dla animowanego przycisku
+    public void ButtonAnimation(int random_animal){
        switch (random_animal){
            case 0:
                b1 = (Button) findViewById(R.id.button_dog);
@@ -260,39 +248,8 @@ public class GameActivity extends AppCompatActivity {
 
 
         final Animation animation =new AlphaAnimation(1.0f, 0.0f);
-        animation.setDuration(500);                             //czas wykonywania animacji
-        b1.startAnimation(animation);                           //startanimacji
-    }
-
-
-
-
-    public void GameOverPopup() {
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        adb.setTitle(R.string.popup_gameover_title);
-        adb.setMessage(R.string.popup_gameover_message);
-
-        //final TextView tv=(TextView)findViewById(R.id.textView1);     // reakcia na przycisniecie przycyski w obieckie TextViec o Id textViev1
-
-        adb.setPositiveButton("Restart Game", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                PlaySounds(random_animal);
-
-                //### akcja  po przyciśnieciu przycisku 1 / przykład zmiana TextViev
-                //tv.setText("You have clicked ok");
-            }
-        });
-        // ########Przycisk Cancel #########
-        // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-        // {
-        //  public void onClick(DialogInterface dialog, int id)
-        // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
-        //tv.setText("You have clicked Cancel");
-        //   dialog.cancel();
-        //}});
-
-        adb.setIcon(R.drawable.black_cat);    // ikona popup
-        adb.show();
+        animation.setDuration(500);
+        b1.startAnimation(animation);
     }
 
 }
