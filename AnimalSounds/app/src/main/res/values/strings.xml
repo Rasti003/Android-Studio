@@ -7,5 +7,7 @@
     <string name="score_game">Score: </string>
     <string name="live">Live: </string>
     <string name="popup_game_title">Game instructions</string>
-    <string name="popup_game_message">Press the animal whose sound you hear</string>
+    <string name="popup_game_message">Press the animal which sound you hear</string>
+    <string name="popup_gameover_title">Game over!"</string>
+    <string name="popup_gameover_message">Game over!"</string>
 </resources>
