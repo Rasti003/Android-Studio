@@ -5,6 +5,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.Random;
@@ -26,14 +28,13 @@ public class GameActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        b1 = (Button) findViewById(R.id.button_dog);
+        b1 = (Button) findViewById(R.id.button_cat);
 
 
 
         popup();   // PO NACISNIECIU OK NSTEPUJE ROZPOCZECIE GRY POPRZEZ ODTWOZENIE DZWIEKU
         random_animal = RandomValue(Num_of_anim);
         DisplayScore(myScore,number_of_lives);       // wywołanie metody wyswietlania zdobytych punktów
-
 
     }
 
@@ -85,9 +86,10 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-    public void DogPlayer() {                                                       // deklaracja metod dla  konkretnych dziwkeów kazdy w osobnej metodzie
+    public void DogPlayer() {                                                       // deklaracja metod dla  konkretnych dzwieków kazdy w osobnej metodzie
         MediaPlayer Player = MediaPlayer.create(this, R.raw.dog);
         Player.start();
+
     }
 
     public void CowPlayer() {
@@ -143,23 +145,29 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void AnswerDog(View v) {
-        if (random_animal == 0) {
-            AddScore();
-        } else {
-           WrongAnwser();
-        }
+        ButtonAnimation(0);
+
+            if (random_animal == 0) {
+                AddScore();
+            } else {
+               WrongAnwser();
+            }
     }
 
     public void AnswerCow(View v) {
-        if (random_animal == 1) {
-            AddScore();
-        } else {
-            WrongAnwser();
-        }
+        ButtonAnimation(1);
+
+            if (random_animal == 1) {
+                AddScore();
+            } else {
+                WrongAnwser();
+            }
     }
 
     public void AnswerMonkay(View v) {
-        if (random_animal == 2) {
+        ButtonAnimation(2);
+
+            if (random_animal == 2) {
             AddScore();
         } else {
             WrongAnwser();
@@ -167,14 +175,16 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void AnswerCat(View v) {
-        if (random_animal == 3) {
-            AddScore();
-        } else {
-            WrongAnwser();
-        }
+        ButtonAnimation(3);
+            if (random_animal == 3) {
+                AddScore();
+            } else {
+                WrongAnwser();
+            }
     }
 
     public void AnswerSheep(View v) {
+        ButtonAnimation(4);
         if (random_animal == 4) {
             AddScore();
         } else {
@@ -215,6 +225,32 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    public void ButtonAnimation(int random_animal){
+       switch (random_animal){
+           case 0:
+               b1 = (Button) findViewById(R.id.button_dog);
+               break;
+           case 1:
+               b1 = (Button) findViewById(R.id.button_cow);
+               break;
+           case 2:
+               b1 = (Button) findViewById(R.id.button_monkey);
+               break;
+           case 3:
+               b1 = (Button) findViewById(R.id.button_cat);
+               break;
+           case 4:
+               b1 = (Button) findViewById(R.id.button_cat);
+               break;
+       }
+
+
+
+
+        final Animation animation =new AlphaAnimation(1.0f, 0.0f);
+        animation.setDuration(500);
+        b1.startAnimation(animation);
+    }
 
 }
 
