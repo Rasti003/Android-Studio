@@ -109,7 +109,18 @@ public class SoundButtonActivity extends AppCompatActivity {
             }
         });
 
+        final MediaPlayer LionPlayer = MediaPlayer.create(this, R.raw.lion);
+        final Button playLion = (Button) this.findViewById(R.id.button_lion);
 
+        playLion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LionPlayer.start();
+                playLion.startAnimation(animation);
+
+
+            }
+        });
 
 
 

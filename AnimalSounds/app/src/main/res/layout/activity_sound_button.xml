@@ -80,6 +80,17 @@ android:layout_height="fill_parent"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"/>
 
+
+    <Button
+        android:id="@+id/button_lion"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+
+        android:background="@drawable/lion"
+        android:layout_below="@+id/button_sheep"
+        android:layout_alignStart="@+id/button_sheep" />
+
+
     <Button
         android:id="@+id/button_ActiveGame"
         android:layout_width="wrap_content"
