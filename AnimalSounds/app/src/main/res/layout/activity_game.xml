@@ -95,13 +95,29 @@
             android:id="@+id/button_sheep"
             android:layout_width="75dp"
             android:layout_height="75dp"
-           android:layout_marginLeft="30dp"
+           android:layout_marginLeft="25dp"
             android:background="@drawable/sheep"
             android:layout_marginTop="10dp"
             android:layout_below="@id/linearLayout"
-            android:onClick="AnswerSheep"
+            android:onClick="AnswerSheep" />
 
-            />
+
+
+    <Button
+        android:id="@+id/button_lion"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/lion"
+        android:layout_below="@+id/linearLayout"
+        android:layout_toEndOf="@+id/button_sheep"
+        android:onClick="AnswerLIon" />
+
+
+
+
+
 
     <TextView
         android:id="@+id/live"

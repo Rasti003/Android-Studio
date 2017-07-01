@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
     int myScore = 0;       // poczatkowal liczba pkt
-    int Num_of_anim = 5; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
+    int Num_of_anim = 6; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
     int number_of_lives =5;
 
@@ -89,6 +89,10 @@ public class GameActivity extends AppCompatActivity {
             case 4:
                 SheepPlayer();
                 break;
+            case 5:
+                LionPlayer();
+                break;
+
 
         }
     }
@@ -144,7 +148,12 @@ public class GameActivity extends AppCompatActivity {
 
 
     }
+    public void LionPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.lion);
+        Player.start();
 
+
+    }
 
 
 
@@ -195,6 +204,14 @@ public class GameActivity extends AppCompatActivity {
             WrongAnwser();
         }
     }
+    public void AnswerLIon(View v) {
+        ButtonAnimation(5);
+        if (random_animal == 5) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
 
 
     public void AddScore() {
@@ -215,6 +232,9 @@ public class GameActivity extends AppCompatActivity {
             case 4:
                 Toast.makeText(getApplicationContext(), "YES!! This is a sheep", Toast.LENGTH_SHORT).show();
                 break;
+            case 5:
+                Toast.makeText(getApplicationContext(), "YES!! This is a lion", Toast.LENGTH_SHORT).show();
+                break;
 
         }
         myScore = myScore + 1;
@@ -222,6 +242,10 @@ public class GameActivity extends AppCompatActivity {
         random_animal = RandomValue(Num_of_anim);
         PlaySounds(random_animal);
     }
+
+
+
+
     public void WrongAnwser() {
         Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
         number_of_lives = number_of_lives - 1;
@@ -234,7 +258,8 @@ public class GameActivity extends AppCompatActivity {
        
 
         }
-
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.wrong);
+        Player.start();
     }
 
     public void ButtonAnimation(int random_animal){                             // animacje po wcisnieciu porzycisku id jest zmieniane na konkredtne dla animowanego przycisku
@@ -252,7 +277,10 @@ public class GameActivity extends AppCompatActivity {
                b1 = (Button) findViewById(R.id.button_cat);
                break;
            case 4:
-               b1 = (Button) findViewById(R.id.button_cat);
+               b1 = (Button) findViewById(R.id.button_sheep);
+               break;
+           case 5:
+               b1 = (Button) findViewById(R.id.button_lion);
                break;
        }
 
