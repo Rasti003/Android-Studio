@@ -13,12 +13,17 @@ import java.util.Random;
 import android.content.DialogInterface;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class GameActivity extends AppCompatActivity {
     int myScore = 0;       // poczatkowal liczba pkt
     int Num_of_anim = 6; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
     int number_of_lives =5;
-
+    private AdView mAdView;
     Button b1;
 
 
@@ -30,11 +35,19 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         b1 = (Button) findViewById(R.id.button_cat);
 
+        MobileAds.initialize(getApplicationContext(),
+                "ca-app-pub-3940256099942544~3347511713");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
 
         popup();   // PO NACISNIECIU OK NSTEPUJE ROZPOCZECIE GRY POPRZEZ ODTWOZENIE DZWIEKU
         random_animal = RandomValue(Num_of_anim);       //przypisywanie wyllosowanego dzwieku pod zmienna
         DisplayScore(myScore,number_of_lives);       // wywołanie metody wyswietlania zdobytych punktów
+
+
 
     }
 
