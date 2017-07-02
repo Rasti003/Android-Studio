@@ -85,10 +85,17 @@ android:layout_height="fill_parent"
         android:id="@+id/button_lion"
         android:layout_width="75dp"
         android:layout_height="75dp"
-
         android:background="@drawable/lion"
         android:layout_below="@+id/linearLayout"
         android:layout_toEndOf="@+id/button_sheep" />
+    <Button
+        android:id="@+id/button_tiger"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/tiger"
+        android:layout_below="@+id/linearLayout"
+        android:layout_toEndOf="@+id/button_lion" />
+
 
 
     <Button

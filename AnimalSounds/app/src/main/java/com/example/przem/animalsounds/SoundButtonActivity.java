@@ -122,6 +122,18 @@ public class SoundButtonActivity extends AppCompatActivity {
             }
         });
 
+        final MediaPlayer TigerPlayer = MediaPlayer.create(this, R.raw.tiger);
+        final Button playTiger = (Button) this.findViewById(R.id.button_tiger);
+
+        playTiger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TigerPlayer.start();
+                playTiger.startAnimation(animation);
+
+
+            }
+        });
 
 
 
