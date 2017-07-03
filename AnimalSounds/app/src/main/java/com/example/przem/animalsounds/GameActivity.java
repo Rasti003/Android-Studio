@@ -8,24 +8,32 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Random;
 import android.content.DialogInterface;
 import android.widget.Toast;
 
+
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
+
+
+
+
+
+
+
 public class GameActivity extends AppCompatActivity {
     int myScore = 0;       // poczatkowal liczba pkt
-    int Num_of_anim = 6; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
+    int Num_of_anim = 7; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
-    int number_of_lives =5;
-    private AdView mAdView;
-    Button b1;
-
+    int number_of_lives =3;
+    private AdView mAdView;                                 //reklamy
+    Button b1;                                          //zmienna przechowujaca id wcisnietego przyciusku
+    ImageView HeartsImage;                              //zmienna przechowujace obrazy zyć
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +53,7 @@ public class GameActivity extends AppCompatActivity {
 
         popup();   // PO NACISNIECIU OK NSTEPUJE ROZPOCZECIE GRY POPRZEZ ODTWOZENIE DZWIEKU
         random_animal = RandomValue(Num_of_anim);       //przypisywanie wyllosowanego dzwieku pod zmienna
-        DisplayScore(myScore,number_of_lives);       // wywołanie metody wyswietlania zdobytych punktów
+        DisplayScore(myScore);       // wywołanie metody wyswietlania zdobytych punktów
 
 
 
@@ -105,18 +113,22 @@ public class GameActivity extends AppCompatActivity {
             case 5:
                 LionPlayer();
                 break;
+            case 6:
+                TigerPlayer();
+                break;
+
 
 
         }
     }
 
 
-    public void DisplayScore(int myScore, int number_of_lives) {                             // deklaracje metody wyswietlania zdobytych punktów
+    public void DisplayScore(int myScore) {                             // deklaracje metody wyswietlania zdobytych punktów
         String message = "Score " + myScore;                    //  twozenie ciagu znakowego
         TextView Score = (TextView) findViewById(R.id.score);  // twozenie Score i odnajdywanie odpowiedniego pola tekstowego
         Score.setText(message);                                 //aktualizacja TextView
 
-        String live_message =  "Live:  " + number_of_lives;
+        String live_message =  "Live:  " ;
         TextView live = (TextView) findViewById(R.id.live);  //  funkcja wyswietlajace pozostałe zyca
         live.setText(live_message);
     }
@@ -161,8 +173,16 @@ public class GameActivity extends AppCompatActivity {
 
 
     }
+
     public void LionPlayer() {
         MediaPlayer Player = MediaPlayer.create(this, R.raw.lion);
+        Player.start();
+
+
+    }
+
+    public void TigerPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.tiger);
         Player.start();
 
 
@@ -172,6 +192,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void AnswerDog(View v) {                                                     //reakcje na kokretne odpoiwedzi  sprawdzanie ich poprawnosci
         ButtonAnimation(0);
+
 
             if (random_animal == 0) {
                 AddScore();
@@ -226,6 +247,15 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    public void AnswerTiger(View v) {
+        ButtonAnimation(6);
+        if (random_animal == 6) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
 
     public void AddScore() {
         switch (random_animal) {
@@ -248,10 +278,12 @@ public class GameActivity extends AppCompatActivity {
             case 5:
                 Toast.makeText(getApplicationContext(), "YES!! This is a lion", Toast.LENGTH_SHORT).show();
                 break;
-
+            case 6:
+                Toast.makeText(getApplicationContext(), "YES!! This is a tiger", Toast.LENGTH_SHORT).show();
+                break;
         }
         myScore = myScore + 1;
-        DisplayScore(myScore, number_of_lives);
+        DisplayScore(myScore);
         random_animal = RandomValue(Num_of_anim);
         PlaySounds(random_animal);
     }
@@ -260,20 +292,47 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void WrongAnwser() {
+
+
+
         Toast.makeText(getApplicationContext(), "The wrong answer", Toast.LENGTH_SHORT).show();
         number_of_lives = number_of_lives - 1;
-        DisplayScore(myScore, number_of_lives);
+        DisplayScore(myScore);
+                switch (number_of_lives){
+                    case 2:
+                        HeartsImage =(ImageView)findViewById(R.id.hearts3); // przypisanie pola imageView do zmiennej HeartsImage  - wyswietlanie zyć
+                        //HeartsImage.setImageResource(R.drawable.lion);
+                        HeartsImage.setImageAlpha(100);
+                        break;
+                    case 1:
+                        HeartsImage =(ImageView)findViewById(R.id.hearts2); // przypisanie pola imageView do zmiennej HeartsImage  - wyswietlanie zyć
+                       // HeartsImage.setImageResource(R.drawable.lion);
+                        HeartsImage.setImageAlpha(100);
+                        break;
+                    case 0:
+                        HeartsImage =(ImageView)findViewById(R.id.hearts1); // przypisanie pola imageView do zmiennej HeartsImage  - wyswietlanie zyć
+                       // HeartsImage.setImageResource(R.drawable.lion);
+                        HeartsImage.setImageAlpha(100);
+                        break;
+                }
 
         if (number_of_lives <= 0) {
             GameOverPopup();
             myScore =0;                          //zerowanie pkt w wypadku przegranej
-            number_of_lives=5;                  // przywracanie domyslnej liczby zyc
-       
-
+            number_of_lives=3;                  // przywracanie domyslnej liczby zyc
+            HeartsImage =(ImageView)findViewById(R.id.hearts3); // przypisanie pola imageView do zmiennej HeartsImage  - wyswietlanie zyć
+            HeartsImage.setImageAlpha(1000);
+            HeartsImage =(ImageView)findViewById(R.id.hearts2);
+            HeartsImage.setImageAlpha(1000);
+            HeartsImage =(ImageView)findViewById(R.id.hearts1);
+            HeartsImage.setImageAlpha(1000);
         }
         MediaPlayer Player = MediaPlayer.create(this, R.raw.wrong);
         Player.start();
     }
+
+
+
 
     public void ButtonAnimation(int random_animal){                             // animacje po wcisnieciu porzycisku id jest zmieniane na konkredtne dla animowanego przycisku
        switch (random_animal){
@@ -294,6 +353,9 @@ public class GameActivity extends AppCompatActivity {
                break;
            case 5:
                b1 = (Button) findViewById(R.id.button_lion);
+               break;
+           case 6:
+               b1 = (Button) findViewById(R.id.button_tiger);
                break;
        }
 

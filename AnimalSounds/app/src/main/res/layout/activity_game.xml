@@ -88,8 +88,8 @@
         android:text="@string/score_game"
         android:textStyle="bold"
         android:textSize="25dp"
-        android:layout_below="@+id/live"
-        android:layout_alignStart="@+id/live" />
+        android:layout_below="@+id/linearLayout2"
+        android:layout_toStartOf="@+id/button_lion" />
 
     <Button
             android:id="@+id/button_sheep"
@@ -113,7 +113,16 @@
         android:layout_below="@+id/linearLayout"
         android:layout_toEndOf="@+id/button_sheep"
         android:onClick="AnswerLIon" />
-
+    <Button
+        android:id="@+id/button_tiger"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/tiger"
+        android:layout_below="@+id/linearLayout"
+        android:layout_toEndOf="@+id/button_lion"
+        android:onClick="AnswerTiger"/>
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -125,7 +134,12 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_alignStart="@+id/button_sheep"
+    android:id="@+id/linearLayout2">
 
 
     <TextView
@@ -134,10 +148,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:text="@string/live"
-        android:layout_below="@+id/button_sheep"
+
         android:textStyle="bold"
-        android:textSize="25dp"
-        android:layout_alignStart="@+id/linearLayout" />
+        android:textSize="20dp"
+         />
+
+<ImageView
+
+    android:src="@drawable/hearts"
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:layout_marginTop="15dp"
+    android:id="@+id/hearts1"
+     />
+    <ImageView
+
+        android:src="@drawable/hearts"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/hearts2"
+       />
+    <ImageView
+
+        android:src="@drawable/hearts"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/hearts3"
+         />
 
 
+
+
+</LinearLayout>
 </RelativeLayout>
