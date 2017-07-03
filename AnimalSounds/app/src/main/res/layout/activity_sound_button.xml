@@ -101,6 +101,16 @@ android:layout_height="fill_parent"
         android:layout_below="@+id/linearLayout"
         android:layout_toEndOf="@+id/button_lion" />
 
+    <Button
+        android:id="@+id/button_wolf"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/wolf"
+        android:layout_below="@+id/linearLayout"
+        android:layout_toEndOf="@+id/button_tiger" />
+
 
     <Button
         android:id="@+id/button_ActiveGame"

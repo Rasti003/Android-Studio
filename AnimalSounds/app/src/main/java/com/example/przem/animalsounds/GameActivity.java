@@ -28,7 +28,7 @@ import com.google.android.gms.ads.MobileAds;
 
 public class GameActivity extends AppCompatActivity {
     int myScore = 0;       // poczatkowal liczba pkt
-    int Num_of_anim = 7; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
+    int Num_of_anim = 8; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
     int number_of_lives =3;
     private AdView mAdView;                                 //reklamy
@@ -117,6 +117,10 @@ public class GameActivity extends AppCompatActivity {
                 TigerPlayer();
                 break;
 
+            case 7:
+                WolfPlayer();
+                break;
+
 
 
         }
@@ -188,6 +192,12 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    public void WolfPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.wolf);
+        Player.start();
+
+
+    }
 
 
     public void AnswerDog(View v) {                                                     //reakcje na kokretne odpoiwedzi  sprawdzanie ich poprawnosci
@@ -257,6 +267,17 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+    public void AnswerWolf(View v) {
+        ButtonAnimation(7);
+        if (random_animal == 7) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+
+
     public void AddScore() {
         switch (random_animal) {
 
@@ -320,7 +341,12 @@ public class GameActivity extends AppCompatActivity {
             GameOverPopup();
             myScore =0;                          //zerowanie pkt w wypadku przegranej
             number_of_lives=3;                  // przywracanie domyslnej liczby zyc
-            HeartsImage =(ImageView)findViewById(R.id.hearts3); // przypisanie pola imageView do zmiennej HeartsImage  - wyswietlanie zyć
+
+
+
+
+
+            HeartsImage =(ImageView)findViewById(R.id.hearts3); //powtórne pokazywanie zyć
             HeartsImage.setImageAlpha(1000);
             HeartsImage =(ImageView)findViewById(R.id.hearts2);
             HeartsImage.setImageAlpha(1000);
@@ -356,6 +382,10 @@ public class GameActivity extends AppCompatActivity {
                break;
            case 6:
                b1 = (Button) findViewById(R.id.button_tiger);
+               break;
+
+           case 7:
+               b1 = (Button) findViewById(R.id.button_wolf);
                break;
        }
 

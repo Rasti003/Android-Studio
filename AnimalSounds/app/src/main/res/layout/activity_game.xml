@@ -124,6 +124,18 @@
         android:layout_toEndOf="@+id/button_lion"
         android:onClick="AnswerTiger"/>
 
+
+    <Button
+        android:id="@+id/button_wolf"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/wolf"
+        android:layout_below="@+id/linearLayout"
+        android:layout_toEndOf="@+id/button_tiger"
+        android:onClick="AnswerWolf"/>
+
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
@@ -134,7 +146,12 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
-<LinearLayout
+
+
+
+
+
+    <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_centerVertical="true"

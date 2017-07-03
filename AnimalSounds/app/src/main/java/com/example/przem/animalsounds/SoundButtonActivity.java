@@ -136,6 +136,19 @@ public class SoundButtonActivity extends AppCompatActivity {
         });
 
 
+        final MediaPlayer WolfPlayer = MediaPlayer.create(this, R.raw.wolf);
+        final Button playWolf = (Button) this.findViewById(R.id.button_wolf);
+
+        playWolf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WolfPlayer.start();
+                playWolf.startAnimation(animation);
+
+
+            }
+        });
+
 
     }
 }
