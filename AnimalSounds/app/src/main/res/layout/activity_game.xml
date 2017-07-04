@@ -25,71 +25,51 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout"
-        android:layout_below="@+id/textView"
-
-        tools:layout_editor_absoluteY="0dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent">
 
         <Button
             android:id="@+id/button_dog"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_marginStart="10dp"
             android:background="@drawable/dog"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:onClick="AnswerDog"
-
-            />
+            android:layout_marginLeft="25dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignEnd="@+id/linearLayout2" />
 
         <Button
             android:id="@+id/button_cow"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_marginStart="10dp"
             android:background="@drawable/cow"
-            android:layout_marginTop="10dp"
             android:onClick="AnswerCow"
 
-            />
+            android:layout_above="@+id/button_sheep"
+            android:layout_alignStart="@+id/button_lion" />
 
         <Button
             android:id="@+id/button_monkey"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_marginStart="10dp"
             android:background="@drawable/monkey"
-            android:layout_marginTop="10dp"
             android:onClick="AnswerMonkay"
-
-            />
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="12dp"
+            android:layout_above="@+id/button_sheep"
+        android:layout_alignStart="@+id/button_tiger"/>
 
         <Button
             android:id="@+id/button_cat"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+
             android:background="@drawable/cat"
-            android:onClick="AnswerCat"
+            android:layout_above="@+id/button_tiger"
+            android:layout_alignStart="@+id/button_wolf"
+            android:onClick="AnswerCat"/>
 
-            android:elevation="2dp"
-            android:visibility="visible" />
-    </LinearLayout>
 
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/score_game"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:layout_above="@+id/adView"
-        android:layout_toStartOf="@+id/button_lion" />
+
 
     <Button
             android:id="@+id/button_sheep"
@@ -98,7 +78,7 @@
            android:layout_marginLeft="25dp"
             android:background="@drawable/sheep"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/linearLayout"
+            android:layout_below="@id/button_dog"
             android:onClick="AnswerSheep" />
 
 
@@ -110,9 +90,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/lion"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/button_cow"
         android:layout_toEndOf="@+id/button_sheep"
         android:onClick="AnswerLIon" />
+
     <Button
         android:id="@+id/button_tiger"
         android:layout_marginTop="10dp"
@@ -120,7 +101,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/tiger"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/button_monkey"
         android:layout_toEndOf="@+id/button_lion"
         android:onClick="AnswerTiger"/>
 
@@ -132,7 +113,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/wolf"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/button_cat"
         android:layout_toEndOf="@+id/button_tiger"
         android:onClick="AnswerWolf"/>
 
@@ -142,52 +123,48 @@
     <Button
         android:id="@+id/button_pig"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/pig"
         android:layout_below="@+id/button_sheep"
         android:layout_toEndOf="@+id/button_sheep"
         android:layout_alignStart="@+id/button_sheep"
-        android:onClick="AnswerWolf"/>
+        android:onClick="AnswerPig"/>
 
 
     <Button
         android:id="@+id/button_elephant"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/elephant"
         android:layout_below="@+id/button_lion"
         android:layout_toEndOf="@+id/button_lion"
         android:layout_alignStart="@+id/button_lion"
-        android:onClick="AnswerWolf"/>
+        android:onClick="AnswerElephant"/>
 
 
     <Button
         android:id="@+id/button_eagle"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/eagle"
         android:layout_below="@+id/button_tiger"
         android:layout_toEndOf="@+id/button_tiger"
         android:layout_alignStart="@+id/button_tiger"
-        android:onClick="AnswerWolf"/>
+        android:onClick="AnswerEagle"/>
 
     <Button
         android:id="@+id/button_duck"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/duck"
         android:layout_below="@+id/button_wolf"
-        android:layout_toEndOf="@+id/button_tiger"
+        android:layout_toEndOf="@+id/button_wolf"
         android:layout_alignStart="@+id/button_wolf"
-        android:onClick="AnswerWolf"/>
+        android:onClick="AnswerDuck"/>
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -200,6 +177,16 @@
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
 
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_game"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_above="@+id/adView"
+        android:layout_toStartOf="@+id/button_lion" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"

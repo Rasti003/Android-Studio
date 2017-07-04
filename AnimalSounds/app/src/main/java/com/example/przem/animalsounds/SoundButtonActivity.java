@@ -150,6 +150,66 @@ public class SoundButtonActivity extends AppCompatActivity {
         });
 
 
+
+        final MediaPlayer PigPlayer = MediaPlayer.create(this, R.raw.pig);
+        final Button playPig = (Button) this.findViewById(R.id.button_pig);
+
+        playPig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PigPlayer.start();
+                playPig.startAnimation(animation);
+
+
+            }
+        });
+
+
+
+        final MediaPlayer ElephantPlayer = MediaPlayer.create(this, R.raw.elephant);
+        final Button playElephant = (Button) this.findViewById(R.id.button_elephant);
+
+        playElephant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ElephantPlayer.start();
+                playPig.startAnimation(animation);
+
+
+            }
+        });
+
+
+
+
+        final MediaPlayer EaglePlayer = MediaPlayer.create(this, R.raw.eagle);
+        final Button playEagle = (Button) this.findViewById(R.id.button_eagle);
+
+        playEagle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EaglePlayer.start();
+                playEagle.startAnimation(animation);
+
+
+            }
+        });
+
+
+
+        final MediaPlayer DuckPlayer = MediaPlayer.create(this, R.raw.dog);
+        final Button playDuck = (Button) this.findViewById(R.id.button_duck);
+
+        playWolf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DuckPlayer.start();
+                playDuck.startAnimation(animation);
+
+
+            }
+        });
+
     }
 }
 

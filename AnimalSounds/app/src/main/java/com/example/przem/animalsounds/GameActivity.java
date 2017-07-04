@@ -28,7 +28,7 @@ import com.google.android.gms.ads.MobileAds;
 
 public class GameActivity extends AppCompatActivity {
     int myScore = 0;       // poczatkowal liczba pkt
-    int Num_of_anim = 8; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
+    int Num_of_anim = 12; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
     int number_of_lives =3;
     private AdView mAdView;                                 //reklamy
@@ -121,6 +121,23 @@ public class GameActivity extends AppCompatActivity {
                 WolfPlayer();
                 break;
 
+            case 8:
+                PigPlayer();
+                break;
+
+            case 9:
+                ElephantPlayer();
+                break;
+
+            case 10:
+                EaglePlayer();
+                break;
+
+            case 11:
+                DuckPlayer();
+                break;
+
+
 
 
         }
@@ -199,6 +216,36 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    public void PigPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.pig);
+        Player.start();
+
+
+    }
+
+    public void ElephantPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.elephant);
+        Player.start();
+
+
+    }
+
+    public void EaglePlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.eagle);
+        Player.start();
+
+
+    }
+
+    public void DuckPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.duck);
+        Player.start();
+
+
+    }
+
+
+
 
     public void AnswerDog(View v) {                                                     //reakcje na kokretne odpoiwedzi  sprawdzanie ich poprawnosci
         ButtonAnimation(0);
@@ -276,6 +323,43 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    public void AnswerPig(View v) {
+        ButtonAnimation(8);
+        if (random_animal == 8) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+    public void AnswerElephant(View v) {
+        ButtonAnimation(9);
+        if (random_animal == 9) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+    public void AnswerEagle(View v) {
+        ButtonAnimation(10);
+        if (random_animal == 10) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+    public void AnswerDuck(View v) {
+        ButtonAnimation(11);
+        if (random_animal == 11) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+
 
 
     public void AddScore() {
@@ -301,6 +385,21 @@ public class GameActivity extends AppCompatActivity {
                 break;
             case 6:
                 Toast.makeText(getApplicationContext(), "YES!! This is a tiger", Toast.LENGTH_SHORT).show();
+                break;
+            case 7:
+                Toast.makeText(getApplicationContext(), "YES!! This is a wolf", Toast.LENGTH_SHORT).show();
+                break;
+            case 8:
+                Toast.makeText(getApplicationContext(), "YES!! This is a pig", Toast.LENGTH_SHORT).show();
+                break;
+            case 9:
+                Toast.makeText(getApplicationContext(), "YES!! This is a elephant", Toast.LENGTH_SHORT).show();
+                break;
+            case 10:
+                Toast.makeText(getApplicationContext(), "YES!! This is a eagle", Toast.LENGTH_SHORT).show();
+                break;
+            case 11:
+                Toast.makeText(getApplicationContext(), "YES!! This is a duck", Toast.LENGTH_SHORT).show();
                 break;
         }
         myScore = myScore + 1;
@@ -361,7 +460,7 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void ButtonAnimation(int random_animal){                             // animacje po wcisnieciu porzycisku id jest zmieniane na konkredtne dla animowanego przycisku
-       switch (random_animal){
+       switch (random_animal) {
            case 0:
                b1 = (Button) findViewById(R.id.button_dog);
                break;
@@ -387,11 +486,24 @@ public class GameActivity extends AppCompatActivity {
            case 7:
                b1 = (Button) findViewById(R.id.button_wolf);
                break;
+
+           case 8:
+               b1 = (Button) findViewById(R.id.button_pig);
+               break;
+
+           case 9:
+               b1 = (Button) findViewById(R.id.button_elephant);
+               break;
+
+           case 10:
+               b1 = (Button) findViewById(R.id.button_eagle);
+               break;
+
+           case 11:
+               b1 = (Button) findViewById(R.id.button_duck);
+               break;
+
        }
-
-
-
-
         final Animation animation =new AlphaAnimation(1.0f, 0.0f);
         animation.setDuration(500);                             //czas wykonywania animacji
         b1.startAnimation(animation);                           //startanimacji
