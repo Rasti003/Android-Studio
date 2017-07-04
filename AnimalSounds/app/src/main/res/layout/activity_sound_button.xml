@@ -111,6 +111,39 @@ android:layout_height="fill_parent"
         android:layout_below="@+id/linearLayout"
         android:layout_toEndOf="@+id/button_tiger" />
 
+    <Button
+        android:id="@+id/button_pig"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/pig"
+        android:layout_below="@+id/button_sheep"
+        android:layout_alignStart="@+id/button_sheep" />
+
+
+        <Button
+        android:id="@+id/button_elephant"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/elephant"
+        android:layout_below="@+id/button_sheep"
+        android:layout_alignStart="@+id/button_lion" />
+
+        <Button
+        android:id="@+id/button_eagle"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/eagle"
+        android:layout_below="@+id/button_sheep"
+        android:layout_alignStart="@+id/button_tiger" />
+
+
+    <Button
+        android:id="@+id/button_duck"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/duck"
+        android:layout_below="@+id/button_sheep"
+        android:layout_alignStart="@+id/button_wolf" />
 
     <Button
         android:id="@+id/button_ActiveGame"
