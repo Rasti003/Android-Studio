@@ -22,7 +22,7 @@ public class SoundButtonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sound_button);
 
         final Animation animation =new AlphaAnimation(1.0f, 0.0f);
-        animation.setDuration(1000);
+        animation.setDuration(100);
 
 
 
@@ -173,7 +173,7 @@ public class SoundButtonActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ElephantPlayer.start();
-                playPig.startAnimation(animation);
+                playElephant.startAnimation(animation);
 
 
             }
@@ -197,12 +197,13 @@ public class SoundButtonActivity extends AppCompatActivity {
 
 
 
-        final MediaPlayer DuckPlayer = MediaPlayer.create(this, R.raw.dog);
-        final Button playDuck = (Button) this.findViewById(R.id.button_duck);
 
-        playWolf.setOnClickListener(new View.OnClickListener() {
+        final Button playDuck = (Button) this.findViewById(R.id.button_duck);
+        final MediaPlayer DuckPlayer = MediaPlayer.create(this, R.raw.duck);
+        playDuck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               
                 DuckPlayer.start();
                 playDuck.startAnimation(animation);
 
