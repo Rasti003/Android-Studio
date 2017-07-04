@@ -360,6 +360,11 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+    public  void Refresh (View v) {
+        PlaySounds(random_animal);
+    }
+
+
 
 
     public void AddScore() {

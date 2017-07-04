@@ -22,7 +22,7 @@ public class SoundButtonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sound_button);
 
         final Animation animation =new AlphaAnimation(1.0f, 0.0f);
-        animation.setDuration(100);
+        animation.setDuration(50);
 
 
 

@@ -165,6 +165,15 @@
         android:layout_toEndOf="@+id/button_wolf"
         android:layout_alignStart="@+id/button_wolf"
         android:onClick="AnswerDuck"/>
+    <Button
+        android:id="@+id/button_refresh"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/rotation"
+
+        android:onClick="Refresh"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:layout_alignEnd="@+id/button_duck" />
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
