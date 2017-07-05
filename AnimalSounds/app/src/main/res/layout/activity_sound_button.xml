@@ -6,7 +6,8 @@
 android:layout_width="fill_parent"
 android:layout_height="fill_parent"
 
-    android:background="@drawable/wallpaper">
+    android:background="#64d8fe"
+  android:backgroundTint="@color/colorPrimaryDark"  >
     tools:context="com.example.przem.animalsounds.SoundButtonActivity">
 
     <TextView
@@ -31,7 +32,7 @@ android:layout_height="fill_parent"
         android:id="@+id/button_dog"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginStart="10dp"
+
         android:background="@drawable/dog"
         android:layout_marginTop="10dp"
         android:onClick="popup"
