@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.przem.animalsounds.GameActivity"
-    android:background="@drawable/wallpaper">
+    android:background="@drawable/background_color">
 
 
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/SoundGame_text"
         android:textStyle="bold"
         android:textSize="35dp"
+        android:textColor="#000080"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         tools:layout_editor_absoluteY="75dp"
@@ -34,8 +35,8 @@
             android:layout_marginTop="12dp"
             android:onClick="AnswerDog"
             android:layout_marginLeft="25dp"
-            android:layout_below="@+id/textView"
-            android:layout_alignEnd="@+id/linearLayout2" />
+            android:layout_below="@+id/textView1"
+          />
 
         <Button
             android:id="@+id/button_cow"
@@ -44,21 +45,10 @@
             android:background="@drawable/cow"
             android:onClick="AnswerCow"
 
-            android:layout_above="@+id/button_sheep"
+            android:layout_above="@+id/button_tiger"
             android:layout_alignStart="@+id/button_lion" />
 
-        <Button
-            android:id="@+id/button_monkey"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:background="@drawable/monkey"
-            android:onClick="AnswerMonkay"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="12dp"
-            android:layout_above="@+id/button_sheep"
-        android:layout_alignStart="@+id/button_tiger"/>
-
-        <Button
+    <Button
             android:id="@+id/button_cat"
             android:layout_width="75dp"
             android:layout_height="75dp"
@@ -101,7 +91,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/tiger"
-        android:layout_below="@+id/button_monkey"
+        android:layout_below="@+id/button_dog"
         android:layout_toEndOf="@+id/button_lion"
         android:onClick="AnswerTiger"/>
 
@@ -127,7 +117,7 @@
         android:layout_height="75dp"
         android:background="@drawable/pig"
         android:layout_below="@+id/button_sheep"
-        android:layout_toEndOf="@+id/button_sheep"
+
         android:layout_alignStart="@+id/button_sheep"
         android:onClick="AnswerPig"/>
 
@@ -139,7 +129,7 @@
         android:layout_height="75dp"
         android:background="@drawable/elephant"
         android:layout_below="@+id/button_lion"
-        android:layout_toEndOf="@+id/button_lion"
+
         android:layout_alignStart="@+id/button_lion"
         android:onClick="AnswerElephant"/>
 
@@ -151,7 +141,6 @@
         android:layout_height="75dp"
         android:background="@drawable/eagle"
         android:layout_below="@+id/button_tiger"
-        android:layout_toEndOf="@+id/button_tiger"
         android:layout_alignStart="@+id/button_tiger"
         android:onClick="AnswerEagle"/>
 
@@ -162,7 +151,6 @@
         android:layout_height="75dp"
         android:background="@drawable/duck"
         android:layout_below="@+id/button_wolf"
-        android:layout_toEndOf="@+id/button_wolf"
         android:layout_alignStart="@+id/button_wolf"
         android:onClick="AnswerDuck"/>
     <Button
@@ -188,6 +176,8 @@
 
 
     <TextView
+        android:paddingLeft="20dp"
+        android:textColor="#000080"
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -195,7 +185,7 @@
         android:textStyle="bold"
         android:textSize="25dp"
         android:layout_above="@+id/adView"
-        android:layout_toStartOf="@+id/button_lion" />
+        android:layout_alignParentStart="true" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -207,6 +197,8 @@
 
 
         <TextView
+            android:paddingLeft="20dp"
+            android:textColor="#000080"
             android:id="@+id/live"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -247,9 +239,15 @@
 
     </LinearLayout>
 
-
-
-
+    <Button
+        android:id="@+id/button_monkey"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="25dp"
+        android:background="@drawable/monkey"
+        android:onClick="AnswerMonkay"
+        android:layout_above="@+id/button_tiger"
+        android:layout_alignStart="@+id/button_tiger" />
 
 
 </RelativeLayout>
