@@ -1,10 +1,13 @@
 package com.example.przem.animalsounds;
 
+import android.app.Activity;
 import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
@@ -26,7 +29,7 @@ import com.google.android.gms.ads.MobileAds;
 
 
 
-public class GameActivity extends AppCompatActivity {
+public class GameActivity extends Activity {
     int myScore = 0;       // poczatkowal liczba pkt
     int Num_of_anim = 12; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
@@ -36,11 +39,11 @@ public class GameActivity extends AppCompatActivity {
     ImageView HeartsImage;                              //zmienna przechowujace obrazy zyć
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-
-        super.onCreate(savedInstanceState);                                      // przygotowywanie przycisku pozycji w pliku XML z dopiskiem OnClick id skierowanie na .dog nie ma znaczenia wybierany jest  kazdy,  id ulega  zmianie podczas wykonywania animacji
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        // remove title
         setContentView(R.layout.activity_game);
+
         b1 = (Button) findViewById(R.id.button_cat);
 
         MobileAds.initialize(getApplicationContext(),

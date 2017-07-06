@@ -1,25 +1,33 @@
 package com.example.przem.animalsounds;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.Toast;
 
 
-public class SoundButtonActivity extends AppCompatActivity {
+public class SoundButtonActivity extends Activity {
 
 
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sound_button);
+        public void onCreate(Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            // remove title
+
+
+            setContentView(R.layout.activity_sound_button);
+
+
 
         final Animation animation =new AlphaAnimation(1.0f, 0.0f);
         animation.setDuration(50);
