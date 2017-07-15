@@ -3,26 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.przem.animalsounds.GameActivity"
     android:background="@drawable/background_color">
 
 
 
-
-    <TextView
-        android:id="@+id/textView1"
+    <ImageView
+        android:id="@+id/c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/SoundGame_text"
-        android:textStyle="bold"
-        android:textSize="35dp"
-        android:textColor="#000080"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        tools:layout_editor_absoluteY="75dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_centerVertical="true"
+        />
 
 
 
@@ -32,11 +25,10 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:background="@drawable/dog"
-            android:layout_marginTop="12dp"
-            android:onClick="AnswerDog"
-            android:layout_marginLeft="25dp"
-            android:layout_below="@+id/textView1"
-          />
+            android:layout_alignRight="@id/c"
+            android:layout_marginEnd="90dp"
+            android:layout_marginTop="10dp"
+            android:onClick="AnswerDog" />
 
         <Button
             android:id="@+id/button_cow"
@@ -44,30 +36,42 @@
             android:layout_height="75dp"
             android:background="@drawable/cow"
             android:onClick="AnswerCow"
+            android:layout_alignBottom="@+id/button_dog"
+            android:layout_alignEnd="@+id/c"
+            android:layout_marginEnd="5dp"/>
 
-            android:layout_above="@+id/button_tiger"
-            android:layout_alignStart="@+id/button_lion" />
+    <Button
+        android:id="@+id/button_monkey"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/monkey"
+        android:onClick="AnswerMonkay"
+        android:layout_alignBottom="@+id/button_cow"
+        android:layout_alignStart="@+id/c"
+        android:layout_marginStart="5dp"/>
+
 
     <Button
             android:id="@+id/button_cat"
             android:layout_width="75dp"
             android:layout_height="75dp"
-
             android:background="@drawable/cat"
-            android:layout_above="@+id/button_tiger"
-            android:layout_alignStart="@+id/button_wolf"
-            android:onClick="AnswerCat"/>
+        android:onClick="AnswerCat"
+        android:layout_alignBottom="@id/button_monkey"
+        android:layout_alignStart="@+id/c"
+        android:layout_marginStart="90dp"/>
 
 
 
 
     <Button
             android:id="@+id/button_sheep"
+        android:layout_marginTop="10dp"
             android:layout_width="75dp"
             android:layout_height="75dp"
-           android:layout_marginLeft="25dp"
             android:background="@drawable/sheep"
-            android:layout_marginTop="10dp"
+        android:layout_alignRight="@id/c"
+        android:layout_marginEnd="90dp"
             android:layout_below="@id/button_dog"
             android:onClick="AnswerSheep" />
 
@@ -78,10 +82,10 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
         android:background="@drawable/lion"
         android:layout_below="@+id/button_cow"
-        android:layout_toEndOf="@+id/button_sheep"
+        android:layout_alignEnd="@+id/c"
+        android:layout_marginEnd="5dp"
         android:onClick="AnswerLIon" />
 
     <Button
@@ -92,7 +96,8 @@
         android:layout_height="75dp"
         android:background="@drawable/tiger"
         android:layout_below="@+id/button_dog"
-        android:layout_toEndOf="@+id/button_lion"
+        android:layout_alignStart="@+id/c"
+        android:layout_marginStart="5dp"
         android:onClick="AnswerTiger"/>
 
 
@@ -117,21 +122,21 @@
         android:layout_height="75dp"
         android:background="@drawable/pig"
         android:layout_below="@+id/button_sheep"
-
-        android:layout_alignStart="@+id/button_sheep"
+        android:layout_alignRight="@id/c"
+        android:layout_marginEnd="90dp"
         android:onClick="AnswerPig"/>
 
 
     <Button
         android:id="@+id/button_elephant"
-        android:layout_marginTop="10dp"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/elephant"
         android:layout_below="@+id/button_lion"
-
-        android:layout_alignStart="@+id/button_lion"
-        android:onClick="AnswerElephant"/>
+        android:layout_alignEnd="@+id/c"
+        android:onClick="AnswerElephant"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"/>
 
 
     <Button
@@ -141,7 +146,8 @@
         android:layout_height="75dp"
         android:background="@drawable/eagle"
         android:layout_below="@+id/button_tiger"
-        android:layout_alignStart="@+id/button_tiger"
+        android:layout_alignStart="@+id/c"
+        android:layout_marginStart="5dp"
         android:onClick="AnswerEagle"/>
 
     <Button
@@ -153,6 +159,98 @@
         android:layout_below="@+id/button_wolf"
         android:layout_alignStart="@+id/button_wolf"
         android:onClick="AnswerDuck"/>
+
+
+
+
+
+
+
+    <Button
+        android:id="@+id/button_bear"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/bear"
+        android:layout_below="@+id/button_pig"
+        android:layout_alignRight="@id/c"
+        android:layout_marginEnd="90dp"
+        android:layout_marginTop="10dp"
+    android:onClick="AnswerBear"/>
+    <Button
+        android:id="@+id/button_boar"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/boar"
+        android:layout_below="@+id/button_elephant"
+        android:layout_alignEnd="@+id/c"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
+        android:onClick="AnswerBoar"/>
+
+    <Button
+        android:id="@+id/button_crocodile"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/crocodile"
+        android:layout_below="@+id/button_eagle"
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@+id/c"
+        android:layout_marginStart="5dp"
+    android:onClick="AnswerAligator"/>
+    <Button
+        android:id="@+id/button_mouse"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/mouse"
+        android:layout_alignBottom="@+id/button_crocodile"
+        android:layout_alignStart="@+id/button_duck"
+    android:onClick="AnswerMouse"/>
+
+
+
+
+    <Button
+        android:id="@+id/button_bison"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/bison"
+        android:layout_below="@+id/button_bear"
+        android:layout_alignRight="@id/c"
+        android:layout_marginEnd="90dp"
+        android:layout_marginTop="10dp"
+    android:onClick="AnswerBison" />
+    <Button
+        android:id="@+id/button_squirrel"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/squirrel"
+        android:layout_below="@+id/button_crocodile"
+        android:layout_alignStart="@+id/c"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+    android:onClick="AnswerSquirrel"/>
+
+    <Button
+        android:id="@+id/button_cock"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/cock"
+        android:layout_below="@+id/button_boar"
+        android:layout_alignEnd="@+id/c"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
+    android:onClick="AnswerCock"/>
+    <Button
+        android:id="@+id/button_deer"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/deer"
+        android:layout_alignBottom="@+id/button_squirrel"
+        android:layout_alignStart="@+id/button_mouse"
+        android:onClick="AnswerDeer" />
+
+
+
     <Button
         android:id="@+id/button_refresh"
         android:layout_width="35dp"
@@ -239,15 +337,7 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_monkey"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginLeft="25dp"
-        android:background="@drawable/monkey"
-        android:onClick="AnswerMonkay"
-        android:layout_above="@+id/button_tiger"
-        android:layout_alignStart="@+id/button_tiger" />
+
 
 
 </RelativeLayout>

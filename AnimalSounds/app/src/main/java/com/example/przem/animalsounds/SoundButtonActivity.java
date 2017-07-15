@@ -1,33 +1,35 @@
 package com.example.przem.animalsounds;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 
 public class SoundButtonActivity extends Activity {
 
-
+    private AdView mAdView;
 
 
     @Override
         public void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             // remove title
+        setContentView(R.layout.activity_sound_button);
 
-
-            setContentView(R.layout.activity_sound_button);
-
-
+        MobileAds.initialize(getApplicationContext(),
+                "ca-app-pub-3940256099942544~3347511713");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         final Animation animation =new AlphaAnimation(1.0f, 0.0f);
         animation.setDuration(50);
@@ -40,7 +42,7 @@ public class SoundButtonActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(), "Game is started " , Toast.LENGTH_SHORT).show(); //Wyswietlanie "POP-UP" z napisem
+                Toast.makeText(getApplicationContext(), "Game starting " , Toast.LENGTH_SHORT).show(); //Wyswietlanie "POP-UP" z napisem
 
                     Intent intent = new Intent(getApplicationContext(), GameActivity.class); //PRZENOSZENIE NA INNE ACTIVITY: twozenie INTENS getApp..- aktualny kontekst aplikacje przycisk powrót tu przeniesie , Activity docelowe.class
                 startActivity(intent);                       //Wywołanie przeniesienia
@@ -214,6 +216,120 @@ public class SoundButtonActivity extends Activity {
                
                 DuckPlayer.start();
                 playDuck.startAnimation(animation);
+
+
+            }
+        });
+
+
+        final Button playBear = (Button) this.findViewById(R.id.button_bear);
+        final MediaPlayer BearPlayer = MediaPlayer.create(this, R.raw.bear);
+        playBear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                BearPlayer.start();
+                playBear.startAnimation(animation);
+
+
+            }
+        });
+
+
+        final Button playBoar = (Button) this.findViewById(R.id.button_boar);
+        final MediaPlayer BoarPlayer = MediaPlayer.create(this, R.raw.pig);
+        playBoar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                BoarPlayer.start();
+                playBoar.startAnimation(animation);
+
+
+            }
+        });
+
+
+        final Button playAligator = (Button) this.findViewById(R.id.button_crocodile);
+        final MediaPlayer AligatorPlayer = MediaPlayer.create(this, R.raw.aligator);
+        playAligator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AligatorPlayer.start();
+                playAligator.startAnimation(animation);
+
+
+            }
+        });
+
+
+        final Button playMouse = (Button) this.findViewById(R.id.button_mouse);
+        final MediaPlayer MousePlayer = MediaPlayer.create(this, R.raw.mouse1);
+        playMouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MousePlayer.start();
+                playMouse.startAnimation(animation);
+
+
+            }
+        });
+
+
+
+        final Button playBison = (Button) this.findViewById(R.id.button_bison);
+        final MediaPlayer BisonPlayer = MediaPlayer.create(this, R.raw.bison);
+        playBison.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                BisonPlayer.start();
+                playBison.startAnimation(animation);
+
+
+            }
+        });
+
+
+        final Button playCock = (Button) this.findViewById(R.id.button_cock);
+        final MediaPlayer CockPlayer = MediaPlayer.create(this, R.raw.cock);
+        playCock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CockPlayer.start();
+                playCock.startAnimation(animation);
+
+
+            }
+        });
+
+
+
+        final Button playSquirrel = (Button) this.findViewById(R.id.button_squirrel);
+        final MediaPlayer SquirrelPlayer = MediaPlayer.create(this, R.raw.squirrel);
+        playSquirrel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SquirrelPlayer.start();
+                playSquirrel.startAnimation(animation);
+
+
+            }
+        });
+
+
+        final Button playDeer = (Button) this.findViewById(R.id.button_deer);
+        final MediaPlayer DeerPlayer = MediaPlayer.create(this, R.raw.deer);
+        playDuck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DeerPlayer.start();
+                playDeer.startAnimation(animation);
 
 
             }

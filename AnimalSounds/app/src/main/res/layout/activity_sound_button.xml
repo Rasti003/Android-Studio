@@ -20,15 +20,15 @@ android:layout_height="fill_parent"
         android:textStyle="bold"
         android:textSize="35dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_centerHorizontal="true" />
 
 <LinearLayout
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/linearLayout"
+
     android:layout_below="@+id/textView"
-    android:layout_alignStart="@+id/button_sheep">
+ >
 
     <Button
         android:id="@+id/button_dog"
@@ -148,15 +148,99 @@ android:layout_height="fill_parent"
         android:layout_below="@+id/button_sheep"
         android:layout_alignStart="@+id/button_wolf" />
 
+
+
+    <Button
+        android:id="@+id/button_bear"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/bear"
+        android:layout_below="@+id/button_pig"
+        android:layout_alignStart="@+id/button_pig" />
+
+    <Button
+        android:id="@+id/button_boar"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/boar"
+        android:layout_below="@+id/button_elephant"
+        android:layout_alignStart="@+id/button_elephant" />
+
+
+    <Button
+        android:id="@+id/button_crocodile"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/crocodile"
+        android:layout_below="@+id/button_eagle"
+        android:layout_alignStart="@+id/button_eagle" />
+
+    <Button
+        android:id="@+id/button_mouse"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/mouse"
+        android:layout_below="@+id/button_duck"
+        android:layout_alignStart="@+id/button_duck" />
+
+
+
+
+
+    <Button
+        android:id="@+id/button_bison"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/bison"
+        android:layout_below="@+id/button_bear"
+        android:layout_alignStart="@+id/button_bear" />
+
+    <Button
+        android:id="@+id/button_squirrel"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/squirrel"
+        android:layout_below="@+id/button_crocodile"
+        android:layout_alignStart="@+id/button_crocodile" />
+
+
+    <Button
+        android:id="@+id/button_cock"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/cock"
+        android:layout_below="@+id/button_boar"
+        android:layout_alignStart="@+id/button_boar" />
+
+    <Button
+        android:id="@+id/button_deer"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/deer"
+        android:layout_below="@+id/button_mouse"
+        android:layout_alignStart="@+id/button_mouse" />
+
+
+
     <Button
         android:id="@+id/button_ActiveGame"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="11dp"
         android:onClick="ActiveGame"
-        android:text="GAME!" />
+        android:text="GAME!"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentEnd="true" />
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

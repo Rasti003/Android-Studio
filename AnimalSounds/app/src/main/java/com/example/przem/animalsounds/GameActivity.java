@@ -31,7 +31,7 @@ import com.google.android.gms.ads.MobileAds;
 
 public class GameActivity extends Activity {
     int myScore = 0;       // poczatkowal liczba pkt
-    int Num_of_anim = 12; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
+    int Num_of_anim = 20; // liczba zwiezat !!! WYMAGA EWDYCJI PO DODANIU ZWIEZAT !!
     int random_animal = 0;
     int number_of_lives =3;
     private AdView mAdView;                                 //reklamy
@@ -138,6 +138,38 @@ public class GameActivity extends Activity {
 
             case 11:
                 DuckPlayer();
+                break;
+
+            case 12:
+                BearPlayer();
+                break;
+
+            case 13:
+                BoarPlayer();
+                break;
+
+            case 14:
+                AligatorPlayer();
+                break;
+
+            case 15:
+                MousePlayer();
+                break;
+
+            case 16:
+                BisonPlayer();
+                break;
+
+            case 17:
+                CockPlayer();
+                break;
+
+            case 18:
+                SquirrelPlayer();
+                break;
+
+            case 19:
+                DeerPlayer();
                 break;
 
 
@@ -247,6 +279,54 @@ public class GameActivity extends Activity {
 
     }
 
+    public void BearPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.bear);
+        Player.start();
+
+
+    }
+    public void AligatorPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.aligator);
+        Player.start();
+
+
+    }
+    public void MousePlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.mouse1);
+        Player.start();
+
+
+    }
+    public void BisonPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.bison);
+        Player.start();
+
+
+    }
+    public void CockPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.cock);
+        Player.start();
+
+
+    }
+    public void SquirrelPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.squirrel);
+        Player.start();
+
+
+    }
+    public void DeerPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.deer);
+        Player.start();
+
+
+    }
+    public void BoarPlayer() {
+        MediaPlayer Player = MediaPlayer.create(this, R.raw.boar);
+        Player.start();
+
+
+    }
 
 
 
@@ -361,6 +441,79 @@ public class GameActivity extends Activity {
             WrongAnwser();
         }
     }
+
+    public void AnswerBear(View v) {
+        ButtonAnimation(12);
+        if (random_animal == 12) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+    public void AnswerBoar(View v) {
+        ButtonAnimation(13);
+        if (random_animal == 13) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+    public void AnswerAligator(View v) {
+        ButtonAnimation(14);
+        if (random_animal == 14) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+    public void AnswerMouse(View v) {
+        ButtonAnimation(15);
+        if (random_animal == 15) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+    public void AnswerBison(View v) {
+        ButtonAnimation(16);
+        if (random_animal == 16) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+    public void AnswerCock(View v) {
+        ButtonAnimation(17);
+        if (random_animal == 17) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+    public void AnswerSquirrel(View v) {
+        ButtonAnimation(18);
+        if (random_animal == 18) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+    public void AnswerDeer(View v) {
+        ButtonAnimation(19);
+        if (random_animal == 19) {
+            AddScore();
+        } else {
+            WrongAnwser();
+        }
+    }
+
+
+
+
 
 
     public  void Refresh (View v) {
