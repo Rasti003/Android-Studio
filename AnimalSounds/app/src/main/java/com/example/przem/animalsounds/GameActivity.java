@@ -1,6 +1,7 @@
 package com.example.przem.animalsounds;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -81,13 +82,7 @@ public class GameActivity extends Activity {
             }
         });
         // ########Przycisk Cancel #########
-        // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-        // {
-        //  public void onClick(DialogInterface dialog, int id)
-        // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
-        //tv.setText("You have clicked Cancel");
-        //   dialog.cancel();
-        //}});
+
 
         adb.setIcon(R.drawable.owl);    // ikona popup
         adb.show();
@@ -562,6 +557,30 @@ public class GameActivity extends Activity {
             case 11:
                 Toast.makeText(getApplicationContext(), "YES!! This is a duck", Toast.LENGTH_SHORT).show();
                 break;
+            case 12:
+                Toast.makeText(getApplicationContext(), "YES!! This is a bear", Toast.LENGTH_SHORT).show();
+                break;
+            case 13:
+                Toast.makeText(getApplicationContext(), "YES!! This is a boar", Toast.LENGTH_SHORT).show();
+                break;
+            case 14:
+                Toast.makeText(getApplicationContext(), "YES!! This is a crocodile", Toast.LENGTH_SHORT).show();
+                break;
+            case 15:
+                Toast.makeText(getApplicationContext(), "YES!! This is a mouse", Toast.LENGTH_SHORT).show();
+                break;
+            case 16:
+                Toast.makeText(getApplicationContext(), "YES!! This is a bison", Toast.LENGTH_SHORT).show();
+                break;
+            case 17:
+                Toast.makeText(getApplicationContext(), "YES!! This is a cock", Toast.LENGTH_SHORT).show();
+                break;
+            case 18:
+                Toast.makeText(getApplicationContext(), "YES!! This is a squirrel", Toast.LENGTH_SHORT).show();
+                break;
+            case 19:
+                Toast.makeText(getApplicationContext(), "YES!! This is a deer", Toast.LENGTH_SHORT).show();
+                break;
         }
         myScore = myScore + 1;
         DisplayScore(myScore);
@@ -599,8 +618,7 @@ public class GameActivity extends Activity {
 
         if (number_of_lives <= 0) {
             GameOverPopup();
-            myScore =0;                          //zerowanie pkt w wypadku przegranej
-            number_of_lives=3;                  // przywracanie domyslnej liczby zyc
+
 
 
 
@@ -664,6 +682,44 @@ public class GameActivity extends Activity {
                b1 = (Button) findViewById(R.id.button_duck);
                break;
 
+           case 12:
+               b1 = (Button) findViewById(R.id.button_bear);
+               break;
+
+
+           case 13:
+               b1 = (Button) findViewById(R.id.button_boar);
+               break;
+
+           case 14:
+               b1 = (Button) findViewById(R.id.button_crocodile);
+               break;
+
+           case 15:
+               b1 = (Button) findViewById(R.id.button_mouse);
+               break;
+
+
+           case 16:
+               b1 = (Button) findViewById(R.id.button_bison);
+               break;
+
+
+
+
+
+           case 17:
+               b1 = (Button) findViewById(R.id.button_cock);
+               break;
+
+
+           case 18:
+               b1 = (Button) findViewById(R.id.button_squirrel);
+               break;
+
+           case 19:
+               b1 = (Button) findViewById(R.id.button_deer);
+               break;
        }
         final Animation animation =new AlphaAnimation(1.0f, 0.0f);
         animation.setDuration(500);                             //czas wykonywania animacji
@@ -683,19 +739,20 @@ public class GameActivity extends Activity {
         adb.setPositiveButton("Restart Game", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 PlaySounds(random_animal);
-
+                myScore =0;                          //zerowanie pkt w wypadku przegranej
+                number_of_lives=3;                  // przywracanie domyslnej liczby zyc
                 //### akcja  po przyciśnieciu przycisku 1 / przykład zmiana TextViev
                 //tv.setText("You have clicked ok");
             }
         });
-        // ########Przycisk Cancel #########
-        // adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-        // {
-        //  public void onClick(DialogInterface dialog, int id)
-        // ###akcja  po przyciśnieciu przycisku 2 / przykład zmiana TextViev
-        //tv.setText("You have clicked Cancel");
-        //   dialog.cancel();
-        //}});
+        adb.setNegativeButton(R.string.save_score, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id){
+
+                Intent rank = new Intent(getApplicationContext(), RankingActivity.class);
+                rank.putExtra("score", myScore); //add extras - score
+                startActivity(rank);           //launch RankingActivity
+
+            }});
 
         adb.setIcon(R.drawable.black_cat);    // ikona popup
         adb.show();

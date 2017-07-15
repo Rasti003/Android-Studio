@@ -290,7 +290,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/score"
-        android:layout_alignStart="@+id/linearLayout"
         android:weightSum="1">
 
 

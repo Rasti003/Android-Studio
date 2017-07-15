@@ -42,9 +42,9 @@ public class SoundButtonActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(), "Game starting " , Toast.LENGTH_SHORT).show(); //Wyswietlanie "POP-UP" z napisem
+                Toast.makeText(getApplicationContext(), "Game is starting " , Toast.LENGTH_SHORT).show(); //Wyswietlanie "POP-UP" z napisem
 
-                    Intent intent = new Intent(getApplicationContext(), GameActivity.class); //PRZENOSZENIE NA INNE ACTIVITY: twozenie INTENS getApp..- aktualny kontekst aplikacje przycisk powrót tu przeniesie , Activity docelowe.class
+                Intent intent = new Intent(getApplicationContext(), GameActivity.class); //PRZENOSZENIE NA INNE ACTIVITY: twozenie INTENS getApp..- aktualny kontekst aplikacje przycisk powrót tu przeniesie , Activity docelowe.class
                 startActivity(intent);                       //Wywołanie przeniesienia
 
             }
@@ -324,7 +324,7 @@ public class SoundButtonActivity extends Activity {
 
         final Button playDeer = (Button) this.findViewById(R.id.button_deer);
         final MediaPlayer DeerPlayer = MediaPlayer.create(this, R.raw.deer);
-        playDuck.setOnClickListener(new View.OnClickListener() {
+        playDeer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
