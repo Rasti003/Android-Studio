@@ -4,11 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
@@ -48,7 +45,7 @@ public class GameActivity extends Activity {
         b1 = (Button) findViewById(R.id.button_cat);
 
         MobileAds.initialize(getApplicationContext(),
-                "ca-app-pub-3940256099942544~3347511713");
+                "a-app-pub-3940256099942544~3347511713c");
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -513,6 +510,8 @@ public class GameActivity extends Activity {
 
     public  void Refresh (View v) {
         PlaySounds(random_animal);
+        myScore= myScore - 1;
+        DisplayScore(myScore);
     }
 
 
@@ -582,7 +581,7 @@ public class GameActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "YES!! This is a deer", Toast.LENGTH_SHORT).show();
                 break;
         }
-        myScore = myScore + 1;
+        myScore = myScore + 10;
         DisplayScore(myScore);
         random_animal = RandomValue(Num_of_anim);
         PlaySounds(random_animal);

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AnimalSounds</string>
     <string name="Cat_button">Play Cat sounds</string>
-    <string name="information_text">push the Animal</string>
+    <string name="information_text">Push the animal</string>
     <string name="Dog_button">PLAY DOG SOUNDS</string>
     <string name="SoundGame_text">LEGEN wait for it DARY!</string>
     <string name="score_game">Score: </string>

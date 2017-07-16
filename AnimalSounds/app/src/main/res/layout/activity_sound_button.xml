@@ -271,16 +271,18 @@
             android:onClick="AnswerDeer" />
 
 
+
+
     <Button
         android:id="@+id/button_ActiveGame"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/adView"
-        android:layout_alignParentEnd="true"
         android:onClick="ActiveGame"
         android:text="GAME!"
-        android:textColor="#6666ff" />
+        android:textColor="#6666ff"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentEnd="true" />
 
 
     <com.google.android.gms.ads.AdView

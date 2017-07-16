@@ -26,7 +26,7 @@ public class SoundButtonActivity extends Activity {
         setContentView(R.layout.activity_sound_button);
 
         MobileAds.initialize(getApplicationContext(),
-                "ca-app-pub-3940256099942544~3347511713");
+                "ca-app-pub-8532606852973121~52052556913");
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
